@@ -6,6 +6,7 @@
     "lodash": "^4.17.21",
     "mongoose": "^8.4.0",
     "nodemon": "^3.1.0",
+    "passport-local": "^1.0.0",
     "prompt-sync": "^4.2.0"
   },
   "name": "node-js-tutorial",

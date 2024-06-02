@@ -40,6 +40,13 @@ const bodyparser = require('body-parser');
 app.use(bodyparser.json());
 const PORT = process.env.PORT || 3000;
 
+//middleware fun
+const logrequest = (req, res, next) => {
+  console.log(`(${new Date().toLocaleString()} ) request mode to:${req.originalUrl}`);
+  next();//move on next phase
+}
+app.use(logrequest);
+
 const person = require('./models/person');
 
 const item = require('./models/item');
