@@ -34,11 +34,13 @@ const app = express();
 
 const db = require('./db');
 require('dotenv').config();
-
+const passport = require('passport');
+const localstrategy = require('passport-local').Strategy;
 const bodyparser = require('body-parser');
 
 app.use(bodyparser.json());
 const PORT = process.env.PORT || 3000;
+
 
 //middleware fun
 const logrequest = (req, res, next) => {
@@ -46,6 +48,7 @@ const logrequest = (req, res, next) => {
   next();//move on next phase
 }
 app.use(logrequest);
+
 
 const person = require('./models/person');
 
